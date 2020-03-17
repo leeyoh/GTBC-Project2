@@ -4,8 +4,6 @@
 
 // Dependencies
 // =============================================================
-const db = require("../models");
-
 
 // Routes
 // =============================================================
@@ -16,14 +14,8 @@ module.exports = function(app) {
  
 
 	app.get("/", (req,res) => {
-		db.burgers.findAll({}).then(function(dbBurger){
-			let burgerArr = []
 
-			dbBurger.forEach((data)=>{
-				burgerArr.push(data.dataValues)
-			})
-			res.render("index",{ index: burgerArr });   
-		})
+			res.render("index",{});   
 	})
 
 };
